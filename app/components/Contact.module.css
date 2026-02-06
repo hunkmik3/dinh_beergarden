@@ -186,3 +186,22 @@
         height: 400px;
     }
 }
+
+@media (max-width: 768px) {
+    .contact {
+        padding: 4rem 0;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    .bookingColumn {
+        padding: 1.5rem;
+        /* More space for inputs on small screens */
+    }
+
+    .columnTitle {
+        font-size: 2rem;
+    }
+}
