@@ -32,15 +32,7 @@ export default function Footer() {
     return (
         <footer className={styles.footer} id="contact">
             {/* Filled-Based Pattern - Beer Garden Festive */}
-            <div className={styles.patternSection}>
-                <div className={styles.patternRow}>
-                    {[...Array(20)].map((_, i) => (
-                        <span key={i} className={styles.patternIcon}>
-                            {['🍺', '🍻', '🥂', '🍗', '🔥'][i % 5]}
-                        </span>
-                    ))}
-                </div>
-            </div>
+
 
             <div className={styles.topLine}></div>
             <div className={styles.container}>
@@ -56,11 +48,11 @@ export default function Footer() {
                             />
                         </Link>
                         <p className={styles.tagline}>Nâng Ly, Cùng Nhau, Chạm Đỉnh</p>
-                        <div className={styles.social}>
-                            <a href="#" className={styles.socialLink}>📘</a>
-                            <a href="#" className={styles.socialLink}>📸</a>
-                            <a href="#" className={styles.socialLink}>🎵</a>
-                            <a href="#" className={styles.socialLink}>📺</a>
+                        <div className={styles.brandNav}>
+                            <a href="#about">GIỚI THIỆU</a>
+                            <a href="#menu">THỰC ĐƠN</a>
+                            <a href="#locations">ĐỊA CHỈ</a>
+                            <a href="#booking">ĐẶT BÀN</a>
                         </div>
                     </div>
 

@@ -11,13 +11,45 @@ export default function About() {
         {
             title: 'MỞ',
             description: 'Không gian mở, tinh thần cởi mở, dễ kết nối – ai tới cũng hòa được.',
-            image: '/images/homepage/beer_garden_outdoor.png'
+            image: '/images/menu/mo_image.jpg'
         },
         {
             title: 'ĐÃ',
             description: 'Uống đã, ăn đã, chơi đã – đúng tinh thần beer garden.',
-            image: '/images/homepage/beer_cheers.png'
+            image: '/images/menu/da_image.jpg'
         },
+    ]
+
+    const menuCategories = [
+        {
+            id: 'grill',
+            title: 'ĐỒ NƯỚNG',
+            items: [
+                { name: "Sườn Nướng Tảng", price: "450k" },
+                { name: "Bò Fujinon Áp Chảo", price: "320k" },
+                { name: "Dẻ Sườn Nướng", price: "290k" },
+                { name: "Tôm Càng Nướng", price: "350k" },
+            ]
+        },
+        {
+            id: 'hotpot',
+            title: 'LẨU',
+            items: [
+                { name: "Lẩu Riêu Cua", price: "550k" },
+                { name: "Lẩu Thái Hải Sản", price: "490k" },
+                { name: "Lẩu Bò Nhúng Dấm", price: "450k" },
+            ]
+        },
+        {
+            id: 'beer',
+            title: 'BIA',
+            items: [
+                { name: "Bia Đỉnh Signature", price: "85k" },
+                { name: "Hoegaarden Rosee", price: "95k" },
+                { name: "Budweiser", price: "55k" },
+                { name: "Heineken Silver", price: "45k" },
+            ]
+        }
     ]
 
     return (
@@ -58,6 +90,63 @@ export default function About() {
                             </div>
                         </div>
                     ))}
+                </div>
+            </div>
+
+            {/* Introduction Image Section */}
+            <div className={styles.introImageSection}>
+                <Image
+                    src="/images/menu/introduction_image.png"
+                    alt="Introduction to Dinh"
+                    width={1920}
+                    height={1080}
+                    className={styles.introImage}
+                />
+            </div>
+
+            {/* Introduction Detail Split Section */}
+            <div className={styles.introSplitSection}>
+                <div className={styles.introContentSide}>
+                    <h2 className={styles.introHeading}>
+                        NÂNG LY<br />
+                        CHẠM<br />
+                        ĐỈNH
+                    </h2>
+                    <div className={styles.introText}>
+                        <p>
+                            ĐỈNH là một beer garden mang tinh thần mở, nơi bia không chỉ để uống mà là chất xúc tác cho kết nối,
+                            cảm xúc và những khoảnh khắc chạm đỉnh trong đời sống đô thị. Lấy cảm hứng từ không khí tụ họp quen thuộc
+                            của miền Tây – thân tình, thoải mái và đầy sức sống – ĐỈNH tạo nên một không gian nơi mọi người có thể
+                            đến gần nhau hơn qua bàn bia, món ngon và câu chuyện.
+                        </p>
+                        <p>
+                            Thương hiệu ĐỈNH được xây dựng trên sự cân bằng giữa năng lượng sôi nổi của beer club và độ chín của trải nghiệm tiếp khách.
+                            Bên ngoài là không gian mở, náo nhiệt, phù hợp tụ tập bạn bè; bên trong là những khu vực riêng tư, đủ chỉn chu để gặp gỡ,
+                            trò chuyện và kết nối công việc.
+                        </p>
+                    </div>
+                </div>
+                <div className={styles.introMenuSide}>
+                    <div className={styles.menuHeader}>
+                        <span className={styles.introEyebrow}>MÓN NỔI BẬT</span>
+                        <a href="#menu" className={styles.viewMenuLink}>Xem toàn bộ thực đơn &rarr;</a>
+                    </div>
+                    <div className={styles.menuCategoriesWrapper}>
+                        {menuCategories.map((category) => (
+                            <div key={category.id} className={styles.menuCategoryColumn}>
+                                <h3 className={styles.menuCategoryTitle}>{category.title}</h3>
+                                <div className={styles.menuCategoryList}>
+                                    {category.items.map((item, idx) => (
+                                        <div key={idx} className={styles.menuSmallItem}>
+                                            <span className={styles.menuSmallName}>{item.name}</span>
+                                            <span className={styles.menuSmallLine}></span>
+                                            <span className={styles.menuSmallPrice}>{item.price}</span>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>

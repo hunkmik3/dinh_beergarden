@@ -2,9 +2,9 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
 import Menu from './components/Menu'
-import Locations from './components/Locations'
-import Booking from './components/Booking'
+import Contact from './components/Contact'
 import Footer from './components/Footer'
+import FloatingContact from './components/FloatingContact'
 
 export default function Home() {
   return (
@@ -14,10 +14,10 @@ export default function Home() {
         <Hero />
         <About />
         <Menu />
-        <Locations />
-        <Booking />
+        <Contact />
       </main>
       <Footer />
+      <FloatingContact />
     </>
   )
 }

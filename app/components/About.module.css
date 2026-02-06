@@ -64,15 +64,37 @@
 }
 
 /* TÍNH CÁCH THƯƠNG HIỆU Section */
+/* TÍNH CÁCH THƯƠNG HIỆU Section */
 .brandSection {
+    position: relative;
     padding: 80px 70px;
     background: var(--color-cream-light);
+    /* Fallback */
+    overflow: hidden;
+}
+
+.brandSection::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        /* linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.85)), */
+        url('/images/menu/Grill-food-banner_background.jpg') center/cover no-repeat;
+    z-index: 0;
+}
+
+.brandSection>* {
+    position: relative;
+    z-index: 2;
 }
 
 .brandTitle {
     font-family: 'DTPhudu', var(--font-primary);
     font-size: clamp(1.25rem, 2.5vw, 1.5rem);
-    color: var(--color-dark);
+    color: var(--color-cream);
     letter-spacing: 0.1em;
     margin-bottom: 3rem;
     font-weight: 500;
@@ -119,14 +141,14 @@
     font-family: 'DTPhudu', var(--font-primary);
     font-size: 1.75rem;
     font-weight: 700;
-    color: var(--color-dark);
+    color: var(--color-gold);
     margin-bottom: 0.75rem;
 }
 
 .valueDescription {
     font-family: 'Averta', var(--font-body);
     font-size: 1rem;
-    color: #555;
+    color: var(--color-cream);
     line-height: 1.6;
     font-style: italic;
 }
@@ -171,5 +193,188 @@
 
     .valueTitle {
         font-size: 1.5rem;
+    }
+}
+
+/* Introduction Image Section */
+.introImageSection {
+    width: 100%;
+    position: relative;
+    /* 
+       Keep bottom 60% of a 16:9 image.
+       Ratio = 16 / (9 * 0.6) = 16 / 5.4 
+    */
+    aspect-ratio: 16/5.4;
+    overflow: hidden;
+}
+
+.introImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom;
+    display: block;
+}
+
+/* Introduction Detail Split Section */
+.introSplitSection {
+    display: flex;
+    min-height: auto;
+    background: white;
+    padding-bottom: 50px;
+}
+
+.introContentSide {
+    width: 33.333%;
+    flex: 0 0 33.333%;
+    padding: 4rem 3rem 4rem 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    color: var(--color-dark);
+}
+
+.introHeading {
+    font-family: 'DTPhudu', var(--font-primary);
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    line-height: 1.1;
+    color: var(--color-red);
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.introText {
+    font-family: 'Averta', var(--font-body);
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.introText p {
+    text-align: justify;
+}
+
+/* Menu Preview Side */
+.introMenuSide {
+    width: 66.666%;
+    flex: 0 0 66.666%;
+    padding: 4rem 5rem 4rem 3rem;
+    background: #f8f8f8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.menuHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 2.5rem;
+    border-bottom: 2px solid var(--color-red);
+    padding-bottom: 1rem;
+}
+
+.introEyebrow {
+    font-family: 'Averta', var(--font-body);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: #666;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+}
+
+.viewMenuLink {
+    text-decoration: none;
+    color: var(--color-red);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.viewMenuLink:hover {
+    color: var(--color-dark);
+    transform: translateX(5px);
+}
+
+.menuCategoriesWrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.menuCategoryColumn {
+    display: flex;
+    flex-direction: column;
+}
+
+.menuCategoryTitle {
+    font-family: 'DTPhudu', var(--font-primary);
+    font-size: 1.25rem;
+    color: var(--color-gold);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    text-align: left;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.menuCategoryList {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.menuSmallItem {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    font-family: 'Averta', var(--font-body);
+}
+
+.menuSmallName {
+    font-weight: 600;
+    color: var(--color-dark);
+    font-size: 0.95rem;
+    white-space: nowrap;
+}
+
+.menuSmallLine {
+    flex: 1;
+    border-bottom: 1px dotted #ccc;
+    margin: 0 8px;
+    position: relative;
+    top: -4px;
+}
+
+.menuSmallPrice {
+    font-weight: 700;
+    color: var(--color-red);
+    font-size: 0.95rem;
+}
+
+/* Responsive for Split Section */
+@media (max-width: 992px) {
+    .introContentSide {
+        width: 100%;
+        flex: 1;
+        padding: 4rem 2rem;
+    }
+
+    .introMenuSide {
+        width: 100%;
+        padding: 4rem 2rem;
+    }
+
+    .menuCategoriesWrapper {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .introHeading {
+        font-size: 3rem;
     }
 }

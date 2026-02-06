@@ -1,0 +1,9 @@
+/* ===================================
+   About Section
+=================================== */
+
+/* ... (previous styles kept in mind, I only append new styles here) ... */
+/* NOTE: Using append approach via multi_replace or normal replace? 
+   No, I must use replace_file_content to append to the css file. 
+   Wait, using write_to_file overwrites. I should use replace_file_content to append at the end or modify.
+*/

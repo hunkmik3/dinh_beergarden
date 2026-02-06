@@ -101,27 +101,40 @@
     margin-bottom: 1.5rem;
 }
 
-.social {
+.brandNav {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
+    flex-wrap: wrap;
 }
 
-.socialLink {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.brandNav a {
+    font-family: 'DTPhudu', var(--font-primary);
     text-decoration: none;
-    font-size: 1.25rem;
+    color: var(--color-white);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    position: relative;
     transition: var(--transition);
 }
 
-.socialLink:hover {
-    background: var(--color-red);
-    transform: translateY(-3px);
+.brandNav a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-gold);
+    transition: width 0.3s ease;
+}
+
+.brandNav a:hover {
+    color: var(--color-gold);
+}
+
+.brandNav a:hover::after {
+    width: 100%;
 }
 
 .links h4 {
