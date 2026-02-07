@@ -1,5 +1,6 @@
 import './fonts.css'
 import './globals.css'
+import { Analytics } from '@vercel/analytics/react'
 
 export const metadata = {
   title: 'ĐỈNH - Vườn Bia Việt Nam | Nâng Ly, Cùng Nhau, Chạm Đỉnh',
@@ -10,7 +11,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="vi">
-      <body>{children}</body>
+      <body>
+        {children}
+        <Analytics />
+      </body>
     </html>
   )
 }
