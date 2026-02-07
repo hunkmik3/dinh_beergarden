@@ -5,14 +5,14 @@ export default function Hero() {
     return (
         <section className={styles.hero} id="home">
             <div className={styles.videoBackground}>
-                <iframe
-                    src="https://www.youtube.com/embed/GxHyTMZ1bsI?controls=0&autoplay=1&mute=1&playsinline=1&loop=1&playlist=GxHyTMZ1bsI"
-                    title="Background Video"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    allowFullScreen
-                ></iframe>
+                <video
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                >
+                    <source src="/images/homepage/backgroundbanner.mp4" type="video/mp4" />
+                </video>
             </div>
             <div className={styles.overlay}></div>
             <div className={styles.content}>

@@ -65,25 +65,12 @@
 
 /* TÍNH CÁCH THƯƠNG HIỆU Section */
 /* TÍNH CÁCH THƯƠNG HIỆU Section */
+/* TÍNH CÁCH THƯƠNG HIỆU Section */
 .brandSection {
     position: relative;
     padding: 80px 70px;
-    background: var(--color-cream-light);
-    /* Fallback */
+    background: #ffffff;
     overflow: hidden;
-}
-
-.brandSection::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background:
-        /* linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.85)), */
-        url('/images/menu/Grill-food-banner_background.jpg') center/cover no-repeat;
-    z-index: 0;
 }
 
 .brandSection>* {
@@ -94,7 +81,7 @@
 .brandTitle {
     font-family: 'DTPhudu', var(--font-primary);
     font-size: clamp(1.25rem, 2.5vw, 1.5rem);
-    color: var(--color-cream);
+    color: var(--color-dark);
     letter-spacing: 0.1em;
     margin-bottom: 3rem;
     font-weight: 500;
@@ -148,7 +135,7 @@
 .valueDescription {
     font-family: 'Averta', var(--font-body);
     font-size: 1rem;
-    color: var(--color-cream);
+    color: var(--color-dark);
     line-height: 1.6;
     font-style: italic;
 }
